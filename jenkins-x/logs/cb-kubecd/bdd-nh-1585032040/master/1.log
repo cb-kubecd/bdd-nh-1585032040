@@ -1,0 +1,133 @@
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-credential-initializer-694p4[0m
+{"level":"warn","ts":1585032140.1719759,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585032140.1728334,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-working-dir-initializer-lbzq6[0m
+{"level":"warn","ts":1585032142.226578,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1585032142.2282746,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-source-cb-kubecd-bdd-nh-1585032040-mas-tb6bc-tnw6t[0m
+{"level":"warn","ts":1585032258.525229,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1585032259.6643202,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/bdd-nh-1585032040.git @ v0.0.1 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:6b0fdf7ff00401f6c6b2d78788101f0747a1d76b
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-setup-jx-git-credentials[0m
+Generated Git credentials file /workspace/xdg_config/git/credentials
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npmrc[0m
+Command "credential" is deprecated, it will be removed on Jun 1 2020.  This is replaced by Tekton's mounted secrets
+WARNING: failed to find Secret npm-token in namespace **
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-install[0m
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN REPLACE_ME@1.0.0 No repository field.
+npm WARN REPLACE_ME@1.0.0 No license field.
+
+up to date in 0.857s
+found 0 vulnerabilities
+
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-npm-test[0m
+
+> REPLACE_ME@1.0.0 test /workspace/source
+> echo "no test specified" && exit 0
+
+no test specified
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-container-build[0m
+[36mINFO[0m[0000] Downloading base image node:9-slim           
+ERROR: logging before flag.Parse: E0324 06:44:27.092097      10 metadata.go:159] while reading 'google-dockercfg-url' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg-url
+ERROR: logging before flag.Parse: E0324 06:44:27.101818      10 metadata.go:142] while reading 'google-dockercfg' metadata: http status code: 404 while fetching url http://metadata.google.internal./computeMetadata/v1/instance/attributes/google-dockercfg
+2020/03/24 06:44:27 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0001] Error while retrieving image from cache: getting file info: stat /workspace/sha256:0e0175bbe4f8d9d104590d8d2c591017874e30977cb71aaff1cf6fa99479575c: no such file or directory 
+[36mINFO[0m[0001] Downloading base image node:9-slim           
+2020/03/24 06:44:28 No matching credentials were found, falling back on anonymous
+[36mINFO[0m[0002] Executing 0 build triggers                   
+[36mINFO[0m[0002] cmd: EXPOSE                                  
+[36mINFO[0m[0002] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0002] Using files from context: [/workspace/source] 
+[36mINFO[0m[0002] Skipping unpacking as no commands require it. 
+[36mINFO[0m[0002] Taking snapshot of full filesystem...        
+[36mINFO[0m[0004] ENV PORT 8080                                
+[36mINFO[0m[0004] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0004] EXPOSE 8080                                  
+[36mINFO[0m[0004] cmd: EXPOSE                                  
+[36mINFO[0m[0004] Adding exposed port: 8080/tcp                
+[36mINFO[0m[0004] No files changed in this command, skipping snapshotting. 
+[36mINFO[0m[0004] WORKDIR /usr/src/app                         
+[36mINFO[0m[0004] cmd: workdir                                 
+[36mINFO[0m[0004] Changed working directory to /usr/src/app    
+[36mINFO[0m[0004] Creating directory /usr/src/app              
+[36mINFO[0m[0004] Taking snapshot of files...                  
+[36mINFO[0m[0004] Using files from context: [/workspace/source] 
+[36mINFO[0m[0004] COPY . .                                     
+[36mINFO[0m[0004] Taking snapshot of files...                  
+[36mINFO[0m[0004] CMD ["npm", "start"]                         
+[36mINFO[0m[0004] No files changed in this command, skipping snapshotting. 
+2020/03/24 06:44:31 existing blob: sha256:e01bd28a434b56ffd2a3fe9aa99b9b69aecca69904843edd30b1ee7150d79904
+2020/03/24 06:44:31 existing blob: sha256:a88538b9cd05cfa611e43a25582a95ad7879f6fa708b0386a26b71ee62235bb3
+2020/03/24 06:44:31 existing blob: sha256:196b8e3c919d5639193ba6c6e54774528942041bbc37606631a2250502985c3c
+2020/03/24 06:44:31 existing blob: sha256:7d083412657baa2dafba8d093034ef26f9ed2c90fb6ed95f76bb55aff03ed429
+2020/03/24 06:44:31 existing blob: sha256:5bba3ecb4cd6374a19da45f2a3db0a9c0804984358b3bb4b666c28944016e5ff
+2020/03/24 06:44:34 pushed blob: sha256:b823fc20ff1e9de3f482130a05efdf582e555fb85f37fe16d69232a9e623a128
+2020/03/24 06:44:34 pushed blob: sha256:ec1b129092a097bc5c5b848379eb338b9a58e86f304a27c90f75f814cbb64469
+2020/03/24 06:44:35 pushed blob: sha256:83c3663544280c07386c37812ce71a0b92ee9e76711fd448cd255c9a14b5fa45
+2020/03/24 06:44:36 gcr.io/jenkins-x-bdd3/bdd-nh-1585032040:0.0.1: digest: sha256:7a009b0584ebc27a65ffdef54cb9e180019b02ab9224f97fb7aeb9b84c3f7199 size: 1404
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-build-post-build[0m
+no CVE provider running in the current ** namespace so skip adding image to be analysed
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-changelog[0m
+Converted /workspace/source/charts/bdd-nh-1585032040 to an unshallow repository
+Generating change log from git ref 99f4783d36ed273a6c67ed0f8bd39b2345486d2c => 09635eb501c0e962a833bfb2ecce558b86d1f2fb
+Associating user x-0 in users.jenkins.io with email c**d-bot@cloudbees.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 6b0fdf7ff00401f6c6b2d78788101f0747a1d76b with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Associating user x-0 in users.jenkins.io with email c**d-bot@cloudbees.com to git GitProvider user with login -0 as emails match
+Adding label jenkins.io/git-github-userid=-0 to user x-0 in users.jenkins.io
+WARNING: Failed to enrich commit 6b0fdf7ff00401f6c6b2d78788101f0747a1d76b with issues: User.jenkins.io "x-0" is invalid: metadata.labels: Invalid value: "-0": a valid label must be an empty string or consist of alphanumeric characters, '-', '_' or '.', and must start and end with an alphanumeric character (e.g. 'MyValue',  or 'my_value',  or '12345', regex used for validation is '(([A-Za-z0-9][-A-Za-z0-9_.]*)?[A-Za-z0-9])?')
+Finding issues in commit messages using git format
+WARNING: No release found for cb-kubecd/bdd-nh-1585032040 and tag v0.0.1 so creating a new release
+Updated the release information at https://github.com/cb-kubecd/bdd-nh-1585032040/releases/tag/v0.0.1
+generated: /workspace/source/charts/bdd-nh-1585032040/templates/release.yaml
+Created Release bdd-nh-1585032040-0-0-1 resource in namespace **
+Updating PipelineActivity cb-kubecd-bdd-nh-1585032040-master-1 with version 0.0.1
+Updated PipelineActivities cb-kubecd-bdd-nh-1585032040-master-1 with release notes URL: https://github.com/cb-kubecd/bdd-nh-1585032040/releases/tag/v0.0.1
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-helm-release[0m
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Adding missing Helm repo: storage.googleapis.com https://storage.googleapis.com/chartmuseum.jenkins-x.io
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for https://storage.googleapis.com/chartmuseum.jenkins-x.io from vault helm/repos
+Successfully added Helm repository storage.googleapis.com.
+Adding missing Helm repo: jenkins-x-chartmuseum http://jenkins-x-chartmuseum:8080
+WARNING: No secrets found on "helm/repos" due: reading the secret "helm/repos" from vault: no secret "helm/repos" not found in vault
+Read credentials for http://jenkins-x-chartmuseum:8080 from vault helm/repos
+Successfully added Helm repository jenkins-x-chartmuseum.
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Uploading chart file bdd-nh-1585032040-0.0.1.tgz to http://jenkins-x-chartmuseum:8080/api/charts
+Received 201 response: {"saved":true}
+
+Showing logs for build [32mcb-kubecd-bdd-nh-1585032040-mas-tb6bc-1[0m stage [32mfrom-build-pack[0m and container [32mstep-promote-jx-promote[0m
+WARNING: prow based install so skip waiting for the merge of Pull Requests to go green as currently there is an issue with gettingstatuses from the PR, see https://github.com/jenkins-x/**/issues/2410
+WARNING: No $CHART_REPOSITORY defined so using the default value of: http://jenkins-x-chartmuseum:8080
+Promoting app bdd-nh-1585032040 version 0.0.1 to namespace **-staging
+WARNING: 
+Created Pull Request: https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+Added label updatebot to Pull Request https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+got git provider status pending from PR https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2
+Pull Request https://github.com/cb-kubecd/environment-pr-187-153-boot-gke-staging/pull/2 is merged at sha 771f11c652bfec2dc5a462d3efd8bcf858af5305
+Pull Request merged but we are not waiting for the update pipeline to complete!
+WARNING: Could not find the service URL in namespace **-staging for names bdd-nh-1585032040, **-bdd-nh-1585032040, **-staging-bdd-nh-1585032040
